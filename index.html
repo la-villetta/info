@@ -1,120 +1,129 @@
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:url" content="https://la-villetta.github.io/info/"/> 
-    <meta property="og:type" content="website"/> 
-    <meta property="og:image" content=""/> 
-    <meta property="og:title" content="라빌레따"/> 
+    <meta property="og:url" content="https://la-villetta.github.io/info/"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content=""/>
+    <meta property="og:title" content="라빌레따"/>
     <meta property="og:description" content="라빌레따"/>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-    <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+    <script charset="UTF-8" class="daum_roughmap_loader_script"
+            src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <style>
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-html {font-family: "PT Sans", sans-serif;}
-</style>
-  </head>
-  <body>
-    <div>
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+        html {
+            font-family: "PT Sans", sans-serif;
+        }
+    </style>
+</head>
+<body>
+<div>
     <header class="bg-white" x-data="{ isOpen: false }">
         <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
             <div class="flex items-center justify-between">
                 <a class="text-xl font-bold text-bl transition-colors duration-300 transform md:text-2xl hover:text-indigo-300"
-                    href="#">La Villetta</a>
-    
+                   href="#">La Villetta</a>
+
                 <!-- Mobile menu button -->
                 <div @click="isOpen = !isOpen" class="flex md:hidden">
-                    <button type="button" class="text-black hover:text-black-400 focus:outline-none focus:text-black-400"
-                        aria-label="toggle menu">
+                    <button type="button"
+                            class="text-black hover:text-black-400 focus:outline-none focus:text-black-400"
+                            aria-label="toggle menu">
                         <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
                             <path fill-rule="evenodd"
-                                d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
+                                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z">
                             </path>
                         </svg>
                     </button>
                 </div>
             </div>
-    
+
             <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
             <div :class="isOpen ? 'flex' : 'hidden'"
-                class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
+                 class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
                 <a class="text-sm font-medium text-black-200 transition-colors duration-300 transform hover:text-indigo-400"
-                    href="#home">홈</a>
+                   href="#home">홈</a>
                 <a class="text-sm font-medium text-black-200 transition-colors duration-300 transform hover:text-indigo-400"
-                    href="#menu">메뉴</a>
+                   href="#menu">메뉴</a>
                 <a class="text-sm font-medium text-black-200 transition-colors duration-300 transform hover:text-indigo-400"
-                    href="#adress">찾아오는 길</a>
+                   href="#adress">찾아오는 길</a>
             </div>
         </nav>
-    
+
         <section id="home" class="flex items-center justify-center" style="height: 500px;">
             <div class="text-center">
                 <p class="text-xl font-medium tracking-wider text-black">La Villetta</p>
                 <h2 class="mt-6 text-3xl font-bold text-black md:text-5xl">수제버거 맛집</h2>
-                </div>
             </div>
-        </section>
-    </header>
+</div>
+</section>
+</header>
 
-    <section id="menu" class="bg-gray-100">
-      <div class="max-w-5xl px-6 py-16 mx-auto text-center">
-          <h2 class="text-3xl font-semibold text-gray-800">메뉴</h2>
-      <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
-                <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-                    <div class="text-xl font-medium text-gray-800">
-                      <div class="relative">
-                    <img src="https://github.com/la-villetta/info/blob/master/KakaoTalk_Photo_2021-06-05-22-12-09.jpeg?raw=true" class="w-full relative z-10" alt="">
-                    <div class="border-4 border-yellow-200 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
-                </div>
+<section id="menu" class="bg-gray-100">
+    <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+        <h2 class="text-3xl font-semibold text-gray-800">메뉴</h2>
+        <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
+            <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-sm">
+                <div class="text-xl font-medium text-gray-800">
+                    <div class="relative">
+                        <img src="https://github.com/la-villetta/info/blob/master/KakaoTalk_Photo_2021-06-05-22-12-09.jpeg?raw=true"
+                             class="w-full relative z-10" alt="">
+                        <div class="border-4 border-yellow-200 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
                     </div>
-              
-                    <div class="max-w-md mt-4">
-                      <div class="mb-10">
+                </div>
+
+                <div class="mt-4 mb-4">
+
                     <h1 class="font-bold uppercase text-2xl mb-5">치킨버거</h1>
                     <p class="text-sm">수제버거...</p>
-                </div>
-                <div>
-                    <div class="inline-block align-bottom mr-5">
-                        <span class="text-2xl leading-none align-baseline">$</span>
-                        <span class="font-bold text-5xl leading-none align-baseline">59</span>
-                        <span class="text-2xl leading-none align-baseline">.99</span>
-                    </div>
-                    <div class="inline-block align-bottom">
-                        <button class="bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold"><i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW</button>
-                    </div>
-                </div>
+                    <div>
+                        <div class="inline-block align-bottom mr-5">
+                            <span class="text-2xl leading-none align-baseline">$</span>
+                            <span class="font-bold text-5xl leading-none align-baseline">59</span>
+                            <span class="text-2xl leading-none align-baseline">.99</span>
+                        </div>
+                        <div class="inline-block align-bottom">
+                            <button class="bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold">
+                                <i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <section id="adress" class="bg-white">
-        <div class="max-w-5xl px-6 py-16 mx-auto text-center">
-            <h2 class="text-3xl font-semibold text-gray-800">찾아오는 길</h2>
-            <p class="max-w-lg mx-auto mt-4 text-gray-600">부산광역시 남구 분포로 145, W스퀘어상가 1134-2호</p>
-              <div class="max-w-lg mt-4 mx-auto">
-<div id="daumRoughmapContainer1622894050885" style="width:100%"class="root_daum_roughmap root_daum_roughmap_landing"></div>
-            </div>
+    </div>
+</section>
+
+<section id="adress" class="bg-white">
+    <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+        <h2 class="text-3xl font-semibold text-gray-800">찾아오는 길</h2>
+        <p class="max-w-lg mx-auto mt-4 text-gray-600">부산광역시 남구 분포로 145, W스퀘어상가 1134-2호</p>
+
+        <div class="max-w-lg mt-4 mx-auto">
+            <div id="daumRoughmapContainer1622894050885" style="width:100%"
+                 class="root_daum_roughmap root_daum_roughmap_landing"></div>
         </div>
-    </section>
-    
-    <footer class="border-t">
-        <div class="container flex items-center justify-between px-6 py-8 mx-auto">
-            <p class="text-gray-500">© 2019-2021 All Rights Reserved.</p>
-            <p class="font-medium text-gray-700">Terms of Service</p>
-        </div>
-    </footer>
+    </div>
+</section>
+
+<footer class="border-t">
+    <div class="container flex items-center justify-between px-6 py-8 mx-auto">
+        <p class="text-gray-500">© 2019-2021 All Rights Reserved.</p>
+        <p class="font-medium text-gray-700">Terms of Service</p>
+    </div>
+</footer>
 </div>
-  </body>
+</body>
 <!-- 3. 실행 스크립트 -->
 <script charset="UTF-8">
-	new daum.roughmap.Lander({
-		"timestamp" : "1622894050885",
-    "key" : "264zk",
-		"mapHeight" : "360"
-	}).render();
+    new daum.roughmap.Lander({
+        'timestamp': '1622894050885',
+        'key': '264zk',
+        'mapHeight': '360'
+    }).render();
 </script>
 </html>
