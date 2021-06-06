@@ -60,7 +60,7 @@
         <div class="max-w-5xl px-6 py-16 mx-auto text-center">
             <h2 class="text-3xl font-semibold text-gray-800">메뉴</h2>
             <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
-                <template x-for="(item, index) in items" :key="index">
+                <template x-for="(item, index) in burgers" :key="index">
                     <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-sm">
                         <div class="text-xl font-medium text-gray-800">
                             <div class="relative">
@@ -166,13 +166,17 @@
 
     function menuData() {
         return {
-            items: [],
+            burgers: [],
+            meat: [],
+            mealkit: [],
             getMenu() {
                 const jsonUrl = 'https://la-villetta.github.io/info/menu.json';
                 fetch(jsonUrl)
                     .then((response) => response.json())
                     .then((data) => {
-                        this.items = data.burger;
+                        this.burgers = data.burger;
+                        this.meat = data.meat;
+                        this.mealkit = data.mealkit;
                     });
             }
         };
