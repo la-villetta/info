@@ -57,7 +57,7 @@
         </section>
     </header>
     <section id="menu" class="bg-gray-100" x-data="menuData()" x-init="getMenu()">
-      <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+        <div class="max-w-5xl px-6 py-16 mx-auto text-center">
             <h2 class="text-3xl font-semibold text-gray-800">Burger</h2>
             <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
                 <template x-for="(item, index) in burgers" :key="index">
@@ -155,11 +155,11 @@
         </div>
     </section>
     <section id="contact" class="bg-white" x-data="infoData()" x-init="getInfo()">
-            <div class="max-w-5xl px-6 py-10 mx-auto text-center">
-                <h2 class="text-3xl font-semibold text-gray-800">Contact</h2>
-                <ul class="pt-4">
-                    <li class="my-4">
-                        <a class="flex text-sm">
+        <div class="max-w-5xl px-6 py-10 mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">Contact</h2>
+            <ul class="pt-4">
+                <li class="my-4">
+                    <a class="flex text-sm">
                             <span class="mr-2 text-gray-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                      stroke="currentColor">
@@ -167,37 +167,40 @@
                                           d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                                 </svg>
                             </span>
-                            <span class="inline-block align-middle leading-6" x-text="contact.adress"></span>
-                        </a>
-                    </li>
-                    <li class="my-4">
-                        <a class="flex text-sm" x-bind:href="'tel:'+contact.phone">
+                        <span class="inline-block align-middle leading-6" x-text="contact.adress"></span>
+                    </a>
+                </li>
+                <li class="my-4">
+                    <a class="flex text-sm" :href="'tel:'+contact.phone">
                             <span class="mr-2 text-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24"
+                                     fill="currentColor">
                                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                                 </svg>
                             </span>
-                            <span x-text="contact.phone" class="inline-block align-middle leading-6"></span>
-                        </a>
-                    </li>
-                    <li class="my-4">
-                        <a class="flex" x-bind:href="'mailto:'+contact.email">
+                        <span x-text="contact.phone" class="inline-block align-middle leading-6"></span>
+                    </a>
+                </li>
+                <li class="my-4">
+                    <a class="flex" :href="'mailto:'+contact.email">
                             <span class="mr-2 text-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                     stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                 </svg>
                             </span>
-                            <span x-text="contact.email" class="inline-block align-middle leading-6"></span>
-                        </a>
-                    </li>
-                </ul>
+                        <span x-text="contact.email" class="inline-block align-middle leading-6"></span>
+                    </a>
+                </li>
+            </ul>
 
-                <div class="max-w-lg mt-4 mx-auto">
-                    <div id="daumRoughmapContainer1622894050885" style="width:100%"
-                         class="root_daum_roughmap root_daum_roughmap_landing"></div>
-                </div>
+            <div class="max-w-lg mt-4 mx-auto">
+                <div id="daumRoughmapContainer1622894050885" style="width:100%"
+                     class="root_daum_roughmap root_daum_roughmap_landing"></div>
             </div>
-        </section>
+        </div>
+    </section>
     <footer class="border-t">
         <div class="container flex items-center justify-between px-6 py-8 mx-auto">
             <p class="text-gray-500">© 2019-2021 All Rights Reserved.</p>
