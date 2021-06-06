@@ -107,7 +107,7 @@
                         </a>
                     </li>
                     <li class="my-4">
-                        <a class="flex text-sm" href="tel:010">
+                        <a class="flex text-sm" x-bind:href="'tel:'+contact.phone">
                             <span class="mr-2 text-gray-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
                                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
@@ -117,7 +117,7 @@
                         </a>
                     </li>
                     <li class="my-4">
-                        <a class="flex">
+                        <a class="flex" x-bind:href="'mailto:'+contact.email">
                             <span class="mr-2 text-gray-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
