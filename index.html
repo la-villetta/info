@@ -21,7 +21,7 @@
     </style>
 </head>
 <body>
-<div x-data="commentData()" x-init="getComments()">
+<div>
     <header class="bg-white" x-data="{ isOpen: false }">
         <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
             <div class="flex items-center justify-between">
@@ -56,7 +56,7 @@
             </div>
         </section>
     </header>
-    <section id="menu" class="bg-gray-100">
+    <section id="menu" class="bg-gray-100" x-data="menuData()" x-init="getMenu()">
         <div class="max-w-5xl px-6 py-16 mx-auto text-center">
             <h2 class="text-3xl font-semibold text-gray-800">메뉴</h2>
             <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
@@ -90,7 +90,7 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="bg-white">
+    <section id="contact" class="bg-white" x-data="infoData()" x-init="getInfo()">
             <div class="max-w-5xl px-6 py-10 mx-auto text-center">
                 <h2 class="text-3xl font-semibold text-gray-800">Contact</h2>
                 <ul class="pt-4">
@@ -150,20 +150,32 @@
         'mapHeight': '360'
     }).render();
 
-    function commentData() {
+    function infoData() {
         return {
             contact: {},
-            items: [],
-            getComments() {
-                const jsonUrl = 'https://la-villetta.github.io/info/data.json';
+            getInfo() {
+                const jsonUrl = 'https://la-villetta.github.io/info/info.json';
                 fetch(jsonUrl)
                     .then((response) => response.json())
                     .then((data) => {
-                        this.items = data.menu;
                         this.contact = data.contact;
                     });
             }
         };
-    }
+    };
+
+    function menuData() {
+        return {
+            items: [],
+            getMenu() {
+                const jsonUrl = 'https://la-villetta.github.io/info/menu.json';
+                fetch(jsonUrl)
+                    .then((response) => response.json())
+                    .then((data) => {
+                        this.items = data.burger;
+                    });
+            }
+        };
+    };
 </script>
 </html>
