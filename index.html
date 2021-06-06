@@ -23,7 +23,7 @@
 <body>
 <div>
     <header class="bg-white" x-data="{ isOpen: false }">
-        <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center fixed bg-white z-40">
+        <nav class="container px-6 py-4 mx-auto md:flex md:justify-between md:items-center">
             <div class="flex items-center justify-between">
                 <a class="text-xl font-bold text-bl transition-colors duration-300 transform md:text-2xl hover:text-indigo-300"
                    href="#">La Villetta</a>
@@ -42,11 +42,11 @@
             <div :class="isOpen ? 'flex' : 'hidden'"
                  class="flex-col mt-2 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0">
                 <a class="text-sm font-medium text-black-200 transition-colors duration-300 transform hover:text-indigo-400"
-                   href="#home" @click="isOpen = !isOpen">Home</a>
+                   href="#home">홈</a>
                 <a class="text-sm font-medium text-black-200 transition-colors duration-300 transform hover:text-indigo-400"
-                   href="#menu" @click="isOpen = !isOpen">Menu</a>
+                   href="#menu">메뉴</a>
                 <a class="text-sm font-medium text-black-200 transition-colors duration-300 transform hover:text-indigo-400"
-                   href="#contact" @click="isOpen = !isOpen">Contact</a>
+                   href="#adress">찾아오는 길</a>
             </div>
         </nav>
         <section id="home" class="flex items-center justify-center" style="height: 500px;">
@@ -57,21 +57,22 @@
         </section>
     </header>
     <section id="menu" class="bg-gray-100">
-        <div class="max-w-5xl px-6 py-10 mx-auto text-center">
-            <h2 class="text-3xl font-semibold text-gray-800">Menu</h2>
-            <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
+        <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">메뉴</h2>
+            <div class="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3" x-data="commentData()" x-init="getComments()">
                 <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-sm">
                     <div class="text-xl font-medium text-gray-800">
                         <div class="relative">
-                            <img src="https://github.com/la-villetta/info/blob/master/KakaoTalk_Photo_2021-06-05-22-12-09.jpeg?raw=true"
+                            <img src="https://github.com/la-villetta/info/blob/master/1.jpeg?raw=true"
                                  class="w-full relative z-10" alt="">
+                            <div class="border-4 border-yellow-200 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
                         </div>
                     </div>
 
                     <div class="mt-4 mb-4">
 
-                        <h1 class="font-bold uppercase text-2xl mb-4">치킨버거</h1>
-                        <p class="text-sm mb-4">수제버거...</p>
+                        <h1 class="font-bold uppercase text-2xl mb-5">치킨버거</h1>
+                        <p class="text-sm">수제버거...</p>
 
                         <div class="inline-block align-bottom mr-5">
                             <span class="text-2xl leading-none align-baseline">$</span>
@@ -89,57 +90,22 @@
             </div>
         </div>
     </section>
-    <section id="contact" class="bg-white">
-        <div class="max-w-5xl px-6 py-10 mx-auto text-center">
-            <h2 class="text-3xl font-semibold text-gray-800">Contact</h2>
-            <ul class="pt-4">
-              <li class="my-4">
-              <a class="flex text-sm">
-              <span class="mr-2 text-gray-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-</svg>
-              </span>
-              <span class="inline-block align-middle leading-6">
-                부산광역시 남구 분포로 145, W스퀘어상가 1134-2호
-              </span>
-              </a>
-        </li>
-            <li class="my-4">
-              <a class="flex text-sm" href="tel:010">
-              <span class="mr-2 text-gray-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-</svg>
-              </span>
-              <span class="inline-block align-middle leading-6">
-                010.2222.3333
-              </span>
-              </a>
-        </li>
-        <li class="my-4">
-          <a class="flex" href="mailto:lavillettakor@gmail.com">
-              <span class="mr-2 text-gray-600">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-</svg>
-              </span>
-              <span class="inline-block align-middle leading-6">
-                lavillettakor@gmail.com
-              </span>
-              </a>
-        </li>
-        </ul>
+    <section id="adress" class="bg-white">
+        <div class="max-w-5xl px-6 py-16 mx-auto text-center">
+            <h2 class="text-3xl font-semibold text-gray-800">찾아오는 길</h2>
+            <p class="max-w-lg mx-auto mt-4 text-gray-600">부산광역시 남구 분포로 145, W스퀘어상가 1134-2호</p>
+
             <div class="max-w-lg mt-4 mx-auto">
                 <div id="daumRoughmapContainer1622894050885" style="width:100%"
                      class="root_daum_roughmap root_daum_roughmap_landing"></div>
             </div>
-            
         </div>
     </section>
+
     <footer class="border-t">
         <div class="container flex items-center justify-between px-6 py-8 mx-auto">
-            <p class="text-gray-500">© 2021 All Rights Reserved.</p>
+            <p class="text-gray-500">© 2019-2021 All Rights Reserved.</p>
+            <p class="font-medium text-gray-700">Terms of Service</p>
         </div>
     </footer>
 </div>
@@ -151,5 +117,21 @@
         'key': '264zk',
         'mapHeight': '360'
     }).render();
+    function commentData() {
+  return {
+    comments: [],
+    init() {
+      this.getComments()
+    },
+    getComments() {
+        const jsonUrl= 'https://la-villetta.github.io/info/data.json';
+        fetch (jsonUrl)
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(333213, data);
+        });
+    }
+  }
+}
 </script>
 </html>
