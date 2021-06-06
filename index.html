@@ -50,10 +50,12 @@
             </div>
         </nav>
     </header>
-    <section>
+    <section id="home">
       <div
           class="relative"
           x-data="sliderData()"
+          x-on:mousedown.passive="pauseSlider()"
+          x-on:mouseup.passive="startSlider()"
           x-init="loop()">
           <div
             class="w-full h-96 flex overflow-x-hidden relative">
@@ -277,12 +279,21 @@
     function sliderData() {
       return {
         active: 1,
-        loopTime: 5000,
+        isPause: false,
+        loopTime: 3000,
         loop() {
           setInterval(() => { 
-            this.active = this.active === 2 ? 1 : this.active+1 
+            if(!this.isPause) {
+              this.active = this.active === 2 ? 1 : this.active+1 
+            }
           }, this.loopTime)
         },
+        pauseSlider() {
+          this.isPause = true;
+        },
+        startSlider() {
+          this.isPause = false;
+        }
       }
     }
 
