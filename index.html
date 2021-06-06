@@ -280,7 +280,7 @@
                 fetch(jsonUrl)
                     .then((response) => response.json())
                     .then((data) => {
-                        if (data.open) {
+                        if (data.open !== '') {
                             this.notice = data;
                             this.isNotice = true;
                         }
