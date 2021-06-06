@@ -49,13 +49,81 @@
                    href="#contact">Contact</a>
             </div>
         </nav>
-        <section id="home" class="flex items-center justify-center" style="height: 500px;">
-            <div class="text-center">
-                <p class="text-xl font-medium tracking-wider text-black">La Villetta</p>
-                <h2 class="mt-6 text-3xl font-bold text-black md:text-5xl">수제버거 맛집</h2>
-            </div>
-        </section>
     </header>
+    <section>
+      <div
+          class="relative"
+          x-data="sliderData()"
+          x-init="loop()">
+          <div
+            class="w-full h-96 flex overflow-x-hidden relative">
+            <div
+              class="absolute"
+              x-show="active == 1"
+              x-transition:enter="transition duration-1000"
+              x-transition:enter-start="transform translate-x-full"
+              x-transition:enter-end="transform translate-x-0"
+              x-transition:leave="transition duration-1000"
+              x-transition:leave-start="transform"
+              x-transition:leave-end="transform -translate-x-full"
+            >
+              <img
+                class="w-full h-96 object-cover opacity-30"
+                alt="1"
+                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              />
+            </div>
+            <div
+              class="bg-black absolute"
+              x-show="active == 2"
+              x-transition:enter="transition duration-1000"
+              x-transition:enter-start="transform translate-x-full"
+              x-transition:enter-end="transform translate-x-0"
+              x-transition:leave="transition duration-1000"
+              x-transition:leave-start="transform"
+              x-transition:leave-end="transform -translate-x-full"
+            >
+              <img
+                class="w-full h-96 object-cover opacity-30"
+                alt="2"
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+              />
+            </div>
+            <div
+              class="bg-black absolute"
+              x-show="active == 3"
+              x-transition:enter="transition duration-1000"
+              x-transition:enter-start="transform translate-x-full"
+              x-transition:enter-end="transform translate-x-0"
+              x-transition:leave="transition duration-1000"
+              x-transition:leave-start="transform"
+              x-transition:leave-end="transform -translate-x-full"
+            >
+              <img
+                class="w-full h-96 object-cover opacity-30"
+                alt="3"
+                src="https://images.unsplash.com/photo-1564069114553-7215e1ff1890?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80"
+              />
+            </div>
+            <div
+              class="bg-black absolute"
+              x-show="active == 4"
+              x-transition:enter="transition duration-1000"
+              x-transition:enter-start="transform translate-x-full"
+              x-transition:enter-end="transform translate-x-0"
+              x-transition:leave="transition duration-1000"
+              x-transition:leave-start="transform"
+              x-transition:leave-end="transform -translate-x-full"
+            >
+              <img
+                class="w-full h-96 object-cover opacity-30"
+                alt="4"
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+              />
+            </div>
+          </div>
+        </div>
+    </section>
     <section id="menu" class="bg-gray-100" x-data="menuData()" x-init="getMenu()">
         <div class="max-w-5xl px-6 py-16 mx-auto text-center">
             <h2 class="text-3xl font-semibold text-gray-800">Burger</h2>
@@ -161,11 +229,10 @@
                 <li class="my-4">
                     <a class="flex text-sm">
                             <span class="mr-2 text-gray-600">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                     stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                          d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
-                                </svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
                             </span>
                         <span class="inline-block align-middle leading-6" x-text="contact.adress"></span>
                     </a>
@@ -239,6 +306,17 @@
         'mapHeight': '360'
     }).render();
 
+    function sliderData() {
+      return {
+        active: 1,
+        loopTime: 3000,
+        loop() {
+          setInterval(() => { 
+            this.active = this.active === 4 ? 1 : this.active+1 }, this.loopTime)
+        },
+      }
+    }
+
     function infoData() {
         return {
             contact: {},
@@ -280,7 +358,7 @@
                 fetch(jsonUrl)
                     .then((response) => response.json())
                     .then((data) => {
-                        if (data.open !== '') {
+                        if (data.open) {
                             this.notice = data;
                             this.isNotice = true;
                         }
