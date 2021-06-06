@@ -3,12 +3,14 @@
     {
       "imageUrl": "https://github.com/la-villetta/info/blob/master/1.jpeg?raw=true",
       "title": "치킨버거",
-      "description": "너무 맛있음"
+      "description": "너무 맛있음",
+      "price": "6,900"
     },
     {
       "imageUrl": "https://github.com/la-villetta/info/blob/master/2.jpeg?raw=true",
       "title": "새우버거",
-      "description": "정말 맛있음"
+      "description": "정말 맛있음",
+      "price": "10,900"
     }
  ]
 }
