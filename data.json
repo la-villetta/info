@@ -1,4 +1,12 @@
 {
+  "contact": {
+    "adress": "부산광역시 남구 분포로 145, W스퀘어상가 1134-2호",
+    "phone": "010.2222.33333",
+    "email": "lavillettakor@gmail.com",
+  },
+  "times": {
+    "open": "09:00 ~ 20:00"
+  },
   "menu": [
     {
       "imageUrl": "https://github.com/la-villetta/info/blob/master/1.jpeg?raw=true",
