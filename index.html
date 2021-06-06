@@ -7,10 +7,12 @@
     <meta property="og:image" content=""/>
     <meta property="og:title" content="라빌레따"/>
     <meta property="og:description" content="라빌레따"/>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <script charset="UTF-8" class="daum_roughmap_loader_script"
             src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
@@ -51,48 +53,46 @@
         </nav>
     </header>
     <section id="home">
-      <div
-          class="relative"
-          x-data="sliderData()"
-          x-on:mousedown.passive="pauseSlider()"
-          x-on:mouseup.passive="startSlider()"
-          x-init="loop()">
-          <div
-            class="w-full h-96 flex overflow-x-hidden relative">
-            <div
-              class="absolute"
-              x-show="active == 1"
-              x-transition:enter="transition duration-1000"
-              x-transition:enter-start="transform translate-x-full"
-              x-transition:enter-end="transform translate-x-0"
-              x-transition:leave="transition duration-1000"
-              x-transition:leave-start="transform"
-              x-transition:leave-end="transform -translate-x-full"
-            >
-              <img
-                class="w-full h-96 object-cover"
-                alt="1"
-                src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-              />
-            </div>
-            <div
-              class="bg-black absolute"
-              x-show="active == 2"
-              x-transition:enter="transition duration-1000"
-              x-transition:enter-start="transform translate-x-full"
-              x-transition:enter-end="transform translate-x-0"
-              x-transition:leave="transition duration-1000"
-              x-transition:leave-start="transform"
-              x-transition:leave-end="transform -translate-x-full"
-            >
-              <img
-                class="w-full h-96 object-cover"
-                alt="2"
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
-              />
-            </div>
+      <div x-data="{swiper: null}" x-init="swiper = new Swiper($refs.container, {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      breakpoints: {},
+    })"
+  class="relative w-full mx-auto flex flex-row"
+>
+  <div class="absolute inset-y-0 left-6 z-10 flex items-center">
+    <button @click="swiper.slidePrev()" 
+            class="bg-white bg-opacity-10 -ml-2 lg:-ml-4 flex justify-center items-center w-10 h-10 rounded-full focus:outline-none">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-left w-6 h-6"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+    </button>
+  </div>
+  <div class="swiper-container" x-ref="container">
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <div class="flex flex-col shadow overflow-hidden">
+          <div class="flex-shrink-0">
+            <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1679&q=80" alt="">
           </div>
         </div>
+      </div>     
+      <div class="swiper-slide">
+        <div class="flex flex-col shadow overflow-hidden">
+          <div class="flex-shrink-0">
+            <img class="h-48 w-full object-cover" src="https://images.unsplash.com/photo-1598951092651-653c21f5d0b9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute inset-y-0 right-6 z-10 flex items-center">
+    <button @click="swiper.slideNext()" 
+            class="bg-white bg-opacity-30 -mr-2 lg:-mr-4 flex justify-center items-center w-10 h-10 rounded-full focus:outline-none">
+      <svg viewBox="0 0 20 20" fill="currentColor" class="chevron-right w-6 h-6"><path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
+    </button>
+  </div>
+</div>
     </section>
     <section id="menu" class="bg-gray-100" x-data="menuData()" x-init="getMenu()">
         <div class="max-w-5xl px-6 py-16 mx-auto text-center">
@@ -107,9 +107,7 @@
                                 <div class="border-4 border-yellow-200 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
                             </div>
                         </div>
-
                         <div class="mt-4 mb-4">
-
                             <h1 class="font-bold uppercase text-2xl mb-5" x-text="item.title"></h1>
                             <p class="text-sm mb-4" x-text="item.description"></p>
                             <div class="inline-block align-bottom mr-5">
@@ -275,27 +273,6 @@
         'key': '264zk',
         'mapHeight': '360'
     }).render();
-
-    function sliderData() {
-      return {
-        active: 1,
-        isPause: false,
-        loopTime: 3000,
-        loop() {
-          setInterval(() => { 
-            if(!this.isPause) {
-              this.active = this.active === 2 ? 1 : this.active+1 
-            }
-          }, this.loopTime)
-        },
-        pauseSlider() {
-          this.isPause = true;
-        },
-        startSlider() {
-          this.isPause = false;
-        }
-      }
-    }
 
     function infoData() {
         return {
