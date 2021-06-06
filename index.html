@@ -75,9 +75,8 @@
                             <h1 class="font-bold uppercase text-2xl mb-5" x-text="item.title"></h1>
                             <p class="text-sm" x-text="item.description"></p>
                             <div class="inline-block align-bottom mr-5">
-                                <span class="text-2xl leading-none align-baseline">$</span>
-                                <span class="font-bold text-5xl leading-none align-baseline">59</span>
-                                <span class="text-2xl leading-none align-baseline">.99</span>
+                                <span class="font-bold text-5xl leading-none align-baseline" x-text="item.price"></span>
+                                원
                             </div>
                             <div class="inline-block align-bottom">
                                 <button class="bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-10 py-2 font-semibold">
@@ -104,9 +103,7 @@
                                           d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                                 </svg>
                             </span>
-                            <span class="inline-block align-middle leading-6">
-                                부산광역시 남구 분포로 145, W스퀘어상가 1134-2호
-                            </span>
+                            <span class="inline-block align-middle leading-6" x-text="contact.adress"></span>
                         </a>
                     </li>
                     <li class="my-4">
@@ -116,21 +113,17 @@
                                     <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
                                 </svg>
                             </span>
-                            <span class="inline-block align-middle leading-6">
-                                010.2222.3333
-                            </span>
+                            <span x-text="contact.phone" class="inline-block align-middle leading-6"></span>
                         </a>
                     </li>
                     <li class="my-4">
-                        <a class="flex" href="mailto:lavillettakor@gmail.com">
+                        <a class="flex">
                             <span class="mr-2 text-gray-600">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                                 </svg>
                             </span>
-                            <span class="inline-block align-middle leading-6">
-                                lavillettakor@gmail.com
-                            </span>
+                            <span x-text="contact.email" class="inline-block align-middle leading-6"></span>
                         </a>
                     </li>
                 </ul>
@@ -159,6 +152,7 @@
 
     function commentData() {
         return {
+            contact: {},
             items: [],
             getComments() {
                 const jsonUrl = 'https://la-villetta.github.io/info/data.json';
@@ -166,6 +160,7 @@
                     .then((response) => response.json())
                     .then((data) => {
                         this.items = data.menu;
+                        this.contact = data.contact;
                     });
             }
         };
