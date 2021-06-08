@@ -1,17 +1,29 @@
 {
   "burger": [
     {
-      "imageUrl": "https://github.com/la-villetta/info/blob/master/1.jpeg?raw=true",
-      "title": "치킨버거",
+      "imageUrl": "https://www.newsworks.co.kr/news/photo/202103/536912_423006_1031.jpg",
+      "title": "치킨버거1",
       "description": "너무 맛있음",
       "price": "6,900"
     },
     {
-      "imageUrl": "https://github.com/la-villetta/info/blob/master/2.jpeg?raw=true",
-      "title": "새우버거",
-      "description": "정말 맛있음",
-      "price": "10,900"
-    }
+      "imageUrl": "https://www.upinews.kr/data/upi/image/2020/02/12/upi202002120131.679x.0.jpg",
+      "title": "치킨버거2",
+      "description": "너무 맛있음",
+      "price": "6,900"
+    },
+    {
+      "imageUrl": "https://www.newsworks.co.kr/news/photo/202103/536912_423006_1031.jpg",
+      "title": "치킨버거3",
+      "description": "너무 맛있음",
+      "price": "6,900"
+    },
+    {
+      "imageUrl": "https://www.newsworks.co.kr/news/photo/202103/536912_423006_1031.jpg",
+      "title": "치킨버거4",
+      "description": "너무 맛있음",
+      "price": "6,900"
+    },
   ],
   "side": [
     {
