@@ -1,26 +1,32 @@
 {
   "burger": [
     {
-      "imageUrl": "https://www.newsworks.co.kr/news/photo/202103/536912_423006_1031.jpg",
+      "imageUrl": "https://www.shinsegaefood.com/uimages/2021/05/21/%ED%8E%98%ED%8D%BC%EB%A1%9C%EB%8B%88%EB%B2%84%EA%B1%B0_home.png",
       "title": "치킨버거1",
       "description": "너무 맛있음",
       "price": "6,900"
     },
     {
-      "imageUrl": "https://www.upinews.kr/data/upi/image/2020/02/12/upi202002120131.679x.0.jpg",
+      "imageUrl": "https://www.shinsegaefood.com/uimages/2021/05/21/%ED%8E%98%ED%8D%BC%EB%A1%9C%EB%8B%88%EB%B2%84%EA%B1%B0_home.png",
       "title": "치킨버거2",
       "description": "너무 맛있음",
       "price": "6,900"
     },
     {
-      "imageUrl": "https://www.newsworks.co.kr/news/photo/202103/536912_423006_1031.jpg",
+      "imageUrl": "https://www.shinsegaefood.com/uimages/2021/05/21/%ED%8E%98%ED%8D%BC%EB%A1%9C%EB%8B%88%EB%B2%84%EA%B1%B0_home.png",
       "title": "치킨버거3",
       "description": "너무 맛있음",
       "price": "6,900"
     },
     {
-      "imageUrl": "https://www.newsworks.co.kr/news/photo/202103/536912_423006_1031.jpg",
+      "imageUrl": "https://www.shinsegaefood.com/uimages/2021/05/21/%ED%8E%98%ED%8D%BC%EB%A1%9C%EB%8B%88%EB%B2%84%EA%B1%B0_home.png",
       "title": "치킨버거4",
+      "description": "너무 맛있음",
+      "price": "6,900"
+    },
+    {
+      "imageUrl": "https://www.shinsegaefood.com/uimages/2021/05/21/%ED%8E%98%ED%8D%BC%EB%A1%9C%EB%8B%88%EB%B2%84%EA%B1%B0_home.png",
+      "title": "치킨버거5",
       "description": "너무 맛있음",
       "price": "6,900"
     }
