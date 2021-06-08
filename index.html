@@ -93,7 +93,7 @@
                                 <div class="flex flex-col shadow overflow-hidden">
 
                                     <div class="flex-shrink-0">
-                                        <div class="px-6 py-8 overflow-hidden bg-white rounded-md shadow-sm">
+                                        <div class="px-3 py-3 overflow-hidden bg-white rounded-md shadow-sm">
                                             <div class="text-xl font-medium text-gray-800">
                                                 <div class="relative">
                                                     <img :src="item.imageUrl"
@@ -274,7 +274,7 @@
             },
             initSlider() {
                 this.swiper = new Swiper(this.$refs.menuSection, {
-                    slidesPerView: 2,
+                    slidesPerView: 1.5,
                     centeredSlides: true,
                     spaceBetween: 12
                 });
