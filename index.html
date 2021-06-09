@@ -66,7 +66,7 @@
                 <div class="swiper-wrapper">
                     <template x-for="(item, index) in events" :key="index">
                         <div class="swiper-slide">
-                            <div class="flex flex-col shadow overflow-hidden">
+                            <div class="flex flex-col shadow-sm overflow-hidden">
                                 <div class="flex-shrink-0">
                                     <img class="h-48 w-full object-cover" :src="item.imageUrl">
                                 </div>
@@ -90,7 +90,7 @@
                     <div class="swiper-wrapper">
                         <template x-for="(item, index) in burgers" :key="index">
                             <div class="swiper-slide">
-                                <div class="flex flex-col shadow overflow-hidden">
+                                <div class="flex flex-col shadow-sm overflow-hidden">
 
                                     <div class="flex-shrink-0">
                                         <div class="px-3 py-3 overflow-hidden bg-white rounded-md shadow-sm">
@@ -233,7 +233,7 @@
                     spaceBetween: 30,
                     centeredSlides: true,
                     autoplay: {
-                        delay: 5000,
+                        delay: 3000,
                         disableOnInteraction: false,
                     },
                     pagination: {
@@ -276,7 +276,15 @@
                 this.swiper = new Swiper(this.$refs.menuSection, {
                     slidesPerView: 1.5,
                     centeredSlides: true,
-                    spaceBetween: 12
+                    spaceBetween: 25,
+                    effect: 'coverflow',
+                    coverflowEffect: {
+          rotate: 0,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false,
+        },
                 });
             }
         };
