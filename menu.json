@@ -38,8 +38,16 @@
   ],
   "side": [
     {
-      "imageUrl": "https://github.com/la-villetta/info/blob/master/1.jpeg?raw=true",
-      "title": "치킨버거",
+      "id": "1",
+      "imageUrl": "https://www.shinsegaefood.com/uimages/2021/01/29/%EC%9D%B8%EC%A0%88%EB%AF%B8.png",
+      "title": "치즈볼",
+      "description": "너무 맛있음",
+      "price": "6,900"
+    },
+    {
+      "id": "2",
+      "imageUrl": "https://www.shinsegaefood.com/uimages/2019/09/20/%EA%B0%90%EC%9E%90%ED%8A%80%EA%B9%80.png",
+      "title": "감자튀김",
       "description": "너무 맛있음",
       "price": "6,900"
     }
