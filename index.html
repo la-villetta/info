@@ -82,14 +82,25 @@
       </div>
     </div>
   </section>
-  <section id="menu" class="bg-gray-100" x-data="menuData()" x-init="getMenu()">
+  <section id="burger" class="bg-gray-100" x-data="menuData()" x-init="getMenu()">
     <div class="max-w-5xl px-6 py-8 mx-auto text-center">
-      <h2 class="text-3xl font-semibold text-gray-800">Burger</h2>
+      <h3 class="flex items-center justify-between py-2">
+					<span class="text-xl font-bold ">Burger</span>
+					<button class="ml-2">
+						<svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
+							<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9
+								0l-22.6-22.6c-9.4-9.4-9.4-24.6
+								0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6
+								0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136
+								136c9.5 9.4 9.5 24.6.1 34z"></path>
+						</svg>
+					</button>
+				</h3>
       <div class="relative w-full mx-auto flex flex-row pt-8">
-        <div class="swiper-container" x-ref="menuSection">
+        <div class="swiper-container" x-ref="burgerSection">
           <div class="swiper-wrapper">
             <template x-for="(item, index) in burgers" :key="index">
-              <div class="swiper-slide" @click="getDetail(item.id)">
+              <div class="swiper-slide" @click="getDetail(item.id, 'burger')">
                   <div class="flex flex-col shadow-sm overflow-hidden">
                     <div class="flex-shrink-0">
                       <div class="px-3 py-3 overflow-hidden bg-white rounded-md shadow-sm">
@@ -108,10 +119,53 @@
                                                           x-text="item.price"></span>
                             원
                           </div>
-                          <div class="inline-block align-bottom pt-2">
-                            <button class="bg-yellow-300 opacity-75 hover:opacity-100 text-yellow-900 hover:text-gray-900 rounded-full px-4 py-2 font-semibold">
-                              <i class="mdi mdi-cart -ml-2 mr-2"></i> BUY NOW
-                            </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="side" class="bg-gray-100" x-data="menuData()" x-init="getMenu()">
+    <div class="max-w-5xl px-6 mx-auto text-center">
+      <h3 class="flex items-center justify-between py-2">
+					<span class="text-xl font-bold ">Side</span>
+					<button class="ml-2">
+						<svg class="h-5 w-5 fill-current" viewBox="0 0 256 512">
+							<path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9
+								0l-22.6-22.6c-9.4-9.4-9.4-24.6
+								0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6
+								0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136
+								136c9.5 9.4 9.5 24.6.1 34z"></path>
+						</svg>
+					</button>
+				</h3>
+      <div class="relative w-full mx-auto flex flex-row pt-8">
+        <div class="swiper-container" x-ref="sideSection">
+          <div class="swiper-wrapper">
+            <template x-for="(item, index) in sides" :key="index">
+              <div class="swiper-slide" @click="getDetail(item.id, 'side')">
+                  <div class="flex flex-col shadow-sm overflow-hidden">
+                    <div class="flex-shrink-0">
+                      <div class="px-3 py-3 overflow-hidden bg-white rounded-md shadow-sm">
+                        <div class="text-xl font-medium text-gray-800">
+                          <div class="relative">
+                            <img :src="item.imageUrl"
+                                 class="w-full relative z-10" alt="">
+                            <div class="border-4 border-yellow-200 absolute top-10 bottom-10 left-10 right-10 z-0"></div>
+                          </div>
+                        </div>
+                        <div class="mt-4 mb-4">
+                          <h1 class="font-bold uppercase text-2xl mb-5" x-text="item.title"></h1>
+                          <p class="text-sm mb-4" x-text="item.description"></p>
+                          <div class="inline-block align-bottom mr-5">
+                                                    <span class="font-bold text-3xl leading-none align-baseline"
+                                                          x-text="item.price"></span>
+                            원
                           </div>
                         </div>
                       </div>
@@ -293,18 +347,48 @@
   function menuData() {
     return {
       burgers: [],
-      swiper: null,
+      sides: [],
+      burgerSwiper: null,
+      sideSwiper: null,
       getMenu() {
         const jsonUrl = 'https://la-villetta.github.io/info/menu.json';
         fetch(jsonUrl)
                 .then((response) => response.json())
                 .then((data) => {
                   this.burgers = data.burger;
+                  this.sides = data.side;
                   this.$nextTick(() => this.initSlider());
                 });
       },
       initSlider() {
-        this.swiper = new Swiper(this.$refs.menuSection, {
+        this.burgerSwiper = new Swiper(this.$refs.burgerSection, {
+          slidesPerView: 1.5,
+          centeredSlides: true,
+          spaceBetween: 25,
+          effect: 'coverflow',
+          coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+          },
+          breakpoints: {
+              640: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 40,
+              },
+              768: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 50,
+              },
+              1024: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 50,
+              }
+          }
+        });
+        this.sideSwiper = new Swiper(this.$refs.sideSection, {
           slidesPerView: 1.5,
           centeredSlides: true,
           spaceBetween: 25,
@@ -332,8 +416,9 @@
           }
         });
       },
-      getDetail(id) {
-        this.$store.menu.detail = this.burgers.find((item) => item.id === id);
+      getDetail(id, type) {
+        const items = (type === 'burger') ? this.burgers: this.sides;
+        this.$store.menu.detail = items.find((item) => item.id === id)
         this.$store.menu.isDetail = true;
       }
     };
